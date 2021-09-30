@@ -2,7 +2,6 @@ version: '3.8'
 services:
   db:
     image: mysql:5.6
-    container_name: Database
     environment:
       MYSQL_DATABASE: soutenance
       MYSQL_USER: user
@@ -10,5 +9,11 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
 
   web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     image: php:5.6-apache
-    container_name: Php
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
