@@ -1,0 +1,10 @@
+#!/bin/sh
+
+consoleregexp='console.log'
+
+# CHECK
+if test $(git diff --cached | grep $consoleregexp | wc -l) != 0
+then 
+  echo "There are some occurrences of console.log at your modification."
+  exit 1
+fi
