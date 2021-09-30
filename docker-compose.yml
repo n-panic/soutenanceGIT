@@ -1,36 +1,14 @@
-version: "3"
-networks:
-  wpsite:
-  phpmyadmin:
+version: '3.8'
 services:
   db:
-    image: mysql
+    image: mysql:5.6
+    container_name: Database
     environment:
       MYSQL_DATABASE: soutenance
       MYSQL_USER: user
       MYSQL_PASSWORD: password
-      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
-    networks:
-      - wpsite
-      - phpmyadmin
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
 
-  phpmyadmin:
-    depends_on:
-      - db
-    image: phpmyadmin
-    ports:
-      - "8080:80"
-    environment:
-      PMA_HOST: db
-      PMA_USER: user
-      PMA_PASSWORD: password
-    networks:
-      - phpmyadmin
   web:
-    image: php:7.2.2-apache
-    depends_on:
-      - db
-    ports:
-      - "8100:80"
-    stdin_open: true
-    tty: true
+    image: php:5.6-apache
+    container_name: Php
