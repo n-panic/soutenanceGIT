@@ -1,0 +1,38 @@
+networks:
+  wpsite:
+  phpmyadmin:
+services:
+  db:
+    image: mariadb
+    ontainer_name: mariadb
+    environment:
+      MYSQL_DATABASE: soutenance
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    networks:
+      - wpsite
+      - phpmyadmin
+
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin
+    ontainer_name: php_my_admin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: user
+      PMA_PASSWORD: password
+    networks:
+      - phpmyadmin
+  web:
+    image: php:7.2.2-apache
+    container_name: php_web
+    depends_on:
+      - db
+    ports:
+      - "8100:80"
+    stdin_open: true
+    tty: true
