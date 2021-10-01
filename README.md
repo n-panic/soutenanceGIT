@@ -9,7 +9,9 @@ Réaliser une montée en version de l'application d'un client, avec la mise en p
     	git clone git@gitlab.com:francisco.leblanc.sacha/soutenancegit.git 
     * Avec https  
     	git clone https://gitlab.com/francisco.leblanc.sacha/soutenancegit.git
-2. Lancer le container docker  
+2. Changer le repertoire des hooks
+	git config core.hooksPath .githooks
+3. Lancer le container docker  
     docker-compose up -d --build
 
 ## Contribuer
