@@ -20,7 +20,7 @@ class ListingController extends Controller
     {
         return new JsonResponse([
             'status' => 'success',
-            'collection' => $this->movieRepository->all()->map([MoviesToDto::class, 'provideTransformer']),
+            'collection' => var_dump($this->movieRepository),
         ]);
     }
 }
