@@ -1,5 +1,6 @@
 # SoutenanceGit
 
+
 ## But du Projet
 Réaliser une montée en version de l'application d'un client, avec la mise en place de bonne pratique du code (Installation claire, documentation, duplication de dépôts de code source, etc.).  
 
@@ -21,6 +22,13 @@ Réaliser une montée en version de l'application d'un client, avec la mise en p
 	git commit -S -m "Mon commit signé"  
 3. Push sur la branche  
 	git push origin feature/myBranch  
+  
+## Auteur
+Nicolas Perradin  
+Nikola Panic  
+Alexandre Trouvé  
+Sacha Francisco-Leblanc  
+ 
 
 ## Licence
 [Licence](https://choosealicense.com/licenses/mit/)
