@@ -21,3 +21,6 @@ Réaliser une montée en version de l'application d'un client, avec la mise en p
 	git commit -S -m "Mon commit signé"  
 3. Push sur la branche  
 	git push origin feature/myBranch  
+
+## Licence
+[Licence](https://choosealicense.com/licenses/mit/)
