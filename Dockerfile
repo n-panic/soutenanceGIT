@@ -25,8 +25,15 @@ RUN a2enmod rewrite headers
 RUN cp "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 RUN sed -ri -e 's!;date.timezone =!date.timezone = "Europe/Paris"!g' $PHP_INI_DIR/php.ini
 
+# XDebug
+# RUN pecl install xdebug && docker-php-ext-enable xdebug
+# COPY ./xdebug.ini /usr/local/etc/conf.d/xdebug.ini
+
 # Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN chown -R www-data:www-data /var/www/html \
     && a2enmod rewrite
+
+# CMD bash -c "php -S localhost:8000 -t public/"
+CMD php artisan migrate:refresh --seed && apache2-foreground

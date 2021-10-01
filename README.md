@@ -1,5 +1,6 @@
 # SoutenanceGit
 
+
 ## But du Projet
 Réaliser une montée en version de l'application d'un client, avec la mise en place de bonne pratique du code (Installation claire, documentation, duplication de dépôts de code source, etc.).  
 
@@ -9,7 +10,9 @@ Réaliser une montée en version de l'application d'un client, avec la mise en p
     	git clone git@gitlab.com:francisco.leblanc.sacha/soutenancegit.git 
     * Avec https  
     	git clone https://gitlab.com/francisco.leblanc.sacha/soutenancegit.git
-2. Lancer le container docker  
+2. Changer le repertoire des hooks
+	git config core.hooksPath .githooks
+3. Lancer le container docker  
     docker-compose up -d --build
 
 ## Contribuer
@@ -19,3 +22,13 @@ Réaliser une montée en version de l'application d'un client, avec la mise en p
 	git commit -S -m "Mon commit signé"  
 3. Push sur la branche  
 	git push origin feature/myBranch  
+  
+## Auteur
+Nicolas Perradin  
+Nikola Panic  
+Alexandre Trouvé  
+Sacha Francisco-Leblanc  
+ 
+
+## Licence
+[Licence](https://choosealicense.com/licenses/mit/)
